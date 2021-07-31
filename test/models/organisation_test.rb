@@ -2,10 +2,7 @@ require 'test_helper'
 
 class OrganisationTest < ActiveSupport::TestCase
   def setup
-    @org = Organisation.new(
-      name: "Center for Ants",
-      hourly_rate: 21
-    )
+    @org = organisations(:one)
   end
 
   test "organisation should be valid" do
