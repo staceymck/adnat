@@ -8,6 +8,6 @@ one:
 
 two:
   name: MyString
-  email: MyString
+  email: MyString2
   organisation: two
   password_digest: MyString
