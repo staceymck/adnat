@@ -1,0 +1,20 @@
+<div class="background">
+  <p>Adnat</p>
+  <div class="user-auth-form">
+    <h1>Log In</h1>
+    <%= form_with url: login_path do |f| %>
+      <%= f.label :email %><br>
+      <%= f.email_field :email %><br>
+
+      <%= f.label :password %><br>
+      <%= f.password_field :password %><br>
+
+      # Make this a link
+      <p>Forgot your password?<p>
+
+      <%= f.submit "Log in" %>
+    <% end %>
+    <%= render partial: '/shared/flash_alerts' %>
+  </div>
+  <p>Setting up a new business? <%= link_to 'Sign up', signup_path %></p>
+</div>
