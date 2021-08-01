@@ -1,0 +1,19 @@
+@import "variables";
+
+.btn {
+ border-radius: 6px;
+ display: inline-block;
+ border: none;
+ cursor: pointer;
+ font-size: initial;
+ text-decoration: none;
+ transition-duration: 0.2s;
+ padding: .5rem 2rem;
+ width: initial;
+}
+
+.btn-cta {
+  background-color: $secondary-color;
+  color: #fff;
+  @extend .btn;
+}

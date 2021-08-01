@@ -1,6 +1,6 @@
-<div class="background">
-  <p>Adnat</p>
-  <div class="user-auth-form">
+<div class="auth-container">
+  <p class="auth-site-name">Adnat<p>  
+  <div class="auth-form">
     <h1>Sign Up</h1>
     <%= form_with model: @user, url: signup_path do |f| %>
       <%= f.label :name %><br>
@@ -13,12 +13,12 @@
       <%= f.password_field :password %><br>
 
       <%= f.label :password_confirmation %><br>
-      <p>(6 characters minimum)</p>
+      <p class="auth-helper">(6 characters minimum)</p>
       <%= f.password_field :password_confirmation %><br>
 
-      <%= f.submit "Sign Up" %>
+      <%= f.submit "Sign Up", class: "btn-cta" %>
     <% end %>
     <%= render partial: '/shared/flash_alerts' %>
   </div>
-  <p>Already a member? <%= link_to 'Login', login_path %></p>
+  <p>Already a member? <strong><%= link_to 'Login', login_path %></strong></p>
 </div>

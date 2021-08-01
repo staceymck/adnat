@@ -1,6 +1,6 @@
-<div class="background">
-  <p>Adnat</p>
-  <div class="user-auth-form">
+<div class="auth-container">
+  <p class="auth-site-name">Adnat<p>
+  <div class="auth-form">
     <h1>Log In</h1>
     <%= form_with url: login_path do |f| %>
       <%= f.label :email %><br>
@@ -12,9 +12,9 @@
       # Make this a link
       <p>Forgot your password?<p>
 
-      <%= f.submit "Log in" %>
+      <%= f.submit "Log in", class: "btn-cta" %>
     <% end %>
     <%= render partial: '/shared/flash_alerts' %>
   </div>
-  <p>Setting up a new business? <%= link_to 'Sign up', signup_path %></p>
+  <p>Setting up a new business? <strong><%= link_to 'Sign up', signup_path %></strong></p>
 </div>
