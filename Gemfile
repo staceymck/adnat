@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 # Use Email Validator to validate user email addresses
 gem 'email_validator'
+# Validate dates, times, and datetimes
+gem 'validates_timeliness', '~> 6.0.0.alpha1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
