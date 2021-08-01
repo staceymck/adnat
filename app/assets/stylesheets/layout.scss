@@ -1,0 +1,17 @@
+@import "variables";
+
+body { 
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-weight: 300;
+  color: $body-color;
+}
+
+a {
+  color: $primary-color;
+}
+
+/* constrained-width container */
+.cw-container {
+  max-width: 85vw;
+  margin: 1.25% auto;
+}

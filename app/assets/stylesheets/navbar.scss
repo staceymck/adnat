@@ -1,0 +1,26 @@
+@import 'variables.scss';
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  
+  li:first-of-type {
+    margin-right: 3rem;
+  }
+}
+
+.nav-home {
+  font-size: 31.25px;
+  font-weight: 400;
+}
+
+.nav-hr {
+  border: 0;
+  border-top: 1px solid $gray;
+}
