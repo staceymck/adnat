@@ -1,0 +1,11 @@
+<tr class="table-row">
+  <td><%= shift.user.name %></td>
+  <td><%= display_date(shift) %></td>
+  <td><%= display_time(shift.start) %></td>
+  <td><%= display_time(shift.finish) %></td>
+  <td><%= shift.break_length %></td>
+  <td><%= hours_worked(shift) %></td>
+  <td><%= shift_cost(shift, organisation) %></td>
+  <td><%= link_to "EDIT", edit_shift_path(shift) %></td>
+  <td><%= button_to "X DELETE", shift_path(shift), method: :delete, data: { confirm: "Confirm delete shift" } %></td>
+</tr>
