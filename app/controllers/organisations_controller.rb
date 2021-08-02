@@ -17,7 +17,7 @@ class OrganisationsController < ApplicationController
 
   def update
     if @organisation.update(organisation_params)
-      redirect_to organisation_path(@oganisation)
+      redirect_to dashboard_path
     else
       render :edit
     end
