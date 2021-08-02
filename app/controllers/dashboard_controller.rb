@@ -7,6 +7,8 @@ class DashboardController < ApplicationController
       render 'member_show'
     else
       @organisations = Organisation.all
+      # Allow user to create a new organisation if desired
+      @organisation = Organisation.new
       render 'non_member_show'
     end
   end
