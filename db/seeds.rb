@@ -26,19 +26,21 @@ Organisation.all.each do |org|
   end
 end
 
-# Create shifts for each employee
+# Create shifts for each employee, except first user with no org membership yet
 User.all.each do |user|
   # Generate standard shifts
-  3.times do
-    start_hr = rand(0..12)
-    finish_hr = start_hr + rand(6..10)
-    day = rand(1..20)
-
-    user.shifts.create!(
-      start: DateTime.new(2021,7,day,start_hr),
-      finish: DateTime.new(2021,7,day,finish_hr),
-      break_length: [15, 30, 45, 60].sample
-    )
+  if (user.id != 1)
+    3.times do
+      start_hr = rand(0..12)
+      finish_hr = start_hr + rand(6..10)
+      day = rand(1..20)
+  
+      user.shifts.create!(
+        start: DateTime.new(2021,7,day,start_hr),
+        finish: DateTime.new(2021,7,day,finish_hr),
+        break_length: [15, 30, 45, 60].sample
+      )
+    end
   end
 
   # Generate overnight shift
