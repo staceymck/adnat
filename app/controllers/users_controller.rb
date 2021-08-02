@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: [:new, :create]
   before_action :redirect_if_logged_in, except: [:edit, :update, :show]
+  before_action :set_user, only: [:show, :edit, :update]
 
   # Users can create accounts and view + edit their account details
   def show
-    @user = current_user
   end
 
   def new
@@ -23,7 +23,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
   end
 
   def update
@@ -37,5 +36,9 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def set_user
+    @user = current_user
   end
 end
