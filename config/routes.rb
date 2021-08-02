@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#show'
 
   resources :users, except: [:new, :create, :destroy, :index]
+  resources :organisations, except: [:index, :show, :new]
+  
+  post '/join', to: 'memberships#create'
+  delete '/leave', to: 'memberships#destroy'
 end
