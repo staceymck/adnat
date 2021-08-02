@@ -25,6 +25,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'email_validator'
 # Validate dates, times, and datetimes
 gem 'validates_timeliness', '~> 6.0.0.alpha1'
+# Calculate time differences
+gem 'time_difference'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
