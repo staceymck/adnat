@@ -1,0 +1,5 @@
+<%= render partial: '/shared/flash_alerts' %>
+<h1 class="page-title"><%= @organisation.name %></h1>
+<%= link_to "Edit", edit_organisation_path(@organisation), class: "btn-primary" %>
+<%= link_to "View shifts", organisation_shifts_path(@organisation), class: "btn-primary" %>
+<%= button_to "Leave this organisation", leave_path, method: :delete, params: { membership: {organisation_id: @organisation.id} }, disable_with: "Leaving..." %>
