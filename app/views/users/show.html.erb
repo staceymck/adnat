@@ -1,0 +1,10 @@
+<h1 class="page-title">Account details</h1>
+<div class="flex-center">
+  <div class="user-card">
+    <p class="emphasis">Name</p>
+    <p><%= @user.name %></p>
+    <p class="emphasis">Email</p>
+    <p><%= @user.email %></p>
+  </div>
+  <%= link_to "Edit", edit_user_path(@user), class: "btn-primary" %>
+</div>
