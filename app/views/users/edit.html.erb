@@ -1,0 +1,20 @@
+<h1 class="page-title">Edit Account</h1>
+<div class="center-form">
+<%= form_with model: @user, url: user_path(@user), local: true do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :email %><br>
+  <%= f.email_field :email %><br>
+
+  <h2 class="heading-3">Password reset (optional)</h2>
+  <%= f.label :password %><br>
+  <%= f.password_field :password, placeholder: "Set new password" %><br>
+
+  <%= f.label :password_confirmation %><br>
+  <p class="auth-helper">(6 characters minimum)</p>
+  <%= f.password_field :password_confirmation, placeholder: "Confirm new password" %><br>
+
+  <%= f.submit "Save", class: "btn-primary" %>
+<% end %>
+</div>
