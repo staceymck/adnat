@@ -4,6 +4,6 @@
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
   <%= f.label :hourly_rate %> (USD)<br>
-  <%= f.number_field :hourly_rate, step: "any"%><br>
+  <%= f.number_field :hourly_rate, value: number_with_precision(organisation.hourly_rate, precision: 2), step: "0.01" %><br>
   <%= f.submit "Save", class: "btn-primary" %>
 <% end %>
