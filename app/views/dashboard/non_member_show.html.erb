@@ -1,0 +1,15 @@
+<h1 class="page-title">Join an organisation</h1>
+<p>You aren’t a member of any organisation. Join an existing one or create a new one to join.</p>
+
+<div class="flex-two-panel">
+  <div class="flex-left">
+    <h2>Organisations</h2>
+    <div class="scroll">
+      <%= render partial: '/dashboard/organisation', collection: @organisations, locals: {user: @user} %>
+    </div>
+  </div>
+  <div class="flex-right">
+    <h2>Create an organisation</h2>
+    <%= render partial: '/organisations/form', locals: {organisation: @organisation} %>
+  </div>
+</div>

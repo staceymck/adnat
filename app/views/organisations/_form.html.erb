@@ -1,0 +1,9 @@
+<%= render partial: '/shared/validation_errors', locals: {object: organisation} %>
+
+<%= form_with model: organisation, local: true do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :hourly_rate %> (USD)<br>
+  <%= f.number_field :hourly_rate, step: "any"%><br>
+  <%= f.submit "Save", class: "btn-primary" %>
+<% end %>
