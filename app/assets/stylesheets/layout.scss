@@ -10,8 +10,45 @@ a {
   color: $primary-color;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: $header-color;
+}
+
 /* constrained-width container */
 .cw-container {
   max-width: 85vw;
-  margin: 1.25% auto;
+  margin: 0 auto;
+}
+
+.alert {
+  color: $alert-color;
+}
+
+.page-title {
+  padding: 2rem;
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.emphasis {
+  color: $header-color;
+  font-weight: 400;
+}
+
+.center-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.heading-3 {
+  font-size: 1.25rem;
+  color: $gray-dark;
+  font-weight: 300;
+  margin: .5rem 0;
 }

@@ -1,6 +1,7 @@
 @import 'variables.scss';
 
 .navbar {
+  margin: 1.25% auto;
   display: flex;
   justify-content: space-between;
 }
@@ -16,7 +17,7 @@
 }
 
 .nav-home {
-  font-size: 31.25px;
+  font-size: 1.953rem;
   font-weight: 400;
 }
 
