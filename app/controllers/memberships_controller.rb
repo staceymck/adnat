@@ -14,6 +14,7 @@ class MembershipsController < ApplicationController
   # Leave an organisation
   def destroy
     @organisation.users.delete(@user)
+    @user.shifts.delete_all(:delete_all)
     redirect_to dashboard_path
   end
 
