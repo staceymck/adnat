@@ -5,4 +5,6 @@ class Organisation < ApplicationRecord
   validates :hourly_rate, numericality: { greater_than: -1 }
   validates :hourly_rate, format: { with: /\A\d+(?:\.\d{0,2})?\z/,
    message: "must have two decimal points" }
+
+  scope :alpha, -> {order(:name)}
 end
