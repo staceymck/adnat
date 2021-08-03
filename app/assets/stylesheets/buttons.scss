@@ -16,10 +16,37 @@
   background-color: $primary-color;
   color: #fff;
   @extend .btn;
+
+  &:hover {
+    background-color: $primary-color-dark;
+    color: #fff;
+  }
 }
 
 .btn-cta {
   background-color: $secondary-color;
   color: #fff;
   @extend .btn;
+
+  &:hover {
+    background-color: $secondary-color-dark;
+  }
+}
+
+.btn-link {
+  color: $primary-color;
+  border: none;
+  background-color: initial;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary-color-dark;
+  }
+}
+
+.btn-alert-text {
+  color: $alert-color;
+  border: none;
+  background-color: initial;
+  cursor: pointer;
 }

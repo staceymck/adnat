@@ -8,6 +8,18 @@ body {
 
 a {
   color: $primary-color;
+  &:hover {
+    color: $primary-color-dark;
+  }
+}
+
+.link-inverse {
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,11 +41,9 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-.flex-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.sub-title {
+  text-align: center;
+  margin-bottom: .5rem;
 }
 
 .emphasis {
@@ -51,4 +61,58 @@ h1, h2, h3, h4, h5, h6 {
   color: $gray-dark;
   font-weight: 300;
   margin: .5rem 0;
+}
+
+.scroll {
+  overflow-y: scroll;
+  max-height: 50vh;
+  padding-bottom: 1rem;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: $gray;
+}
+
+.scroll-sm {
+  max-height: 300px;
+  @extend .scroll;
+}
+
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-two-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.flex-two-split {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+}
+
+.fa.icon-m {
+ font-size: 1.25rem;
+}
+
+#trash-icon, #moon-icon {
+  color: $gray-dark
+}
+
+.search-bar {
+  input {
+    width: 60%;
+    margin-bottom: 1rem;
+  }
+
+  input[type="submit"] {
+    width: 20%;
+  }
 }

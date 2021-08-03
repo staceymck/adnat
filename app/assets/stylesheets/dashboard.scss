@@ -1,3 +1,6 @@
+@import "variables";
+
+
 .dash-cta {
   margin-bottom: 2rem;
 
@@ -6,18 +9,42 @@
   }
 }
 
-.dash-member {
+.flex-two-center.dash-member {
+  justify-content: center;
+  width: 60%;
+  margin: 0 auto;
+
   h2 {
     margin: 1rem 0;
+  }
+  
+  .flex-left, .flex-right {
+    margin: 2rem 4rem;
+  }
+
+  .flex-left {
+    flex: 2
+  }
+
+  .flex-right {
+    flex: 1
   }
 }
 
 .dash-org-row {
   display: flex;
+  border-bottom: 1px solid $gray;
+  padding: .5rem;
+  align-items: center;
 
-  input[type="submit"] {
+  input[type="submit"], .btn-link {
     padding: 0;
+    margin: 0rem;
     font-size: inherit;
+  }
+
+  &:last-child {
+    border-bottom: none;
   }
 }
 
