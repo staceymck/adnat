@@ -27,6 +27,8 @@ gem 'email_validator'
 gem 'validates_timeliness', '~> 6.0.0.alpha1'
 # Calculate time differences
 gem 'time_difference'
+# Font Awesome icons
+gem 'font-awesome-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
