@@ -1,0 +1,13 @@
+<div class="auth-container">
+  <p class="auth-site-name">Adnat<p>  
+  <div class="auth-form">
+    <h1>Reset password</h1>
+    <%= form_with url: reset_path do |f| %>
+      <%= f.label :email %><br>
+      <%= f.email_field :email %><br>
+
+      <%= f.submit "Send reset link", class: "btn-cta" %>
+    <% end %>
+    <%= render partial: '/shared/flash_alerts' %>
+  </div>
+</div>
