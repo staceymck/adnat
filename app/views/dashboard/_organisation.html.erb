@@ -1,5 +1,5 @@
-<div class="row">
-  <%= organisation.name %>
-  <%= button_to "JOIN", join_path, params: { membership: {organisation_id: organisation.id} }, disable_with: "Joining...", class: "link" %>
+<div class="dash-org-row">
+  <p><%= organisation.name %></p>
+  <%= button_to "JOIN", join_path, params: { membership: {organisation_id: organisation.id} }, disable_with: "Joining...", class: "btn-link" %>
   <%= link_to "EDIT", edit_organisation_path(organisation) %>
 </div>
