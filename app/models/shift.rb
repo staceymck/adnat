@@ -11,7 +11,7 @@ class Shift < ApplicationRecord
   scope :newest, -> {order(start: :desc)}
   
   def self.filter_by_user_name(q)
-    includes(:user).where("name LIKE ?", "%#{q}%")
+    includes(:user).where("name ILIKE ?", "%#{q}%")
   end
 
   def overnight
