@@ -7,7 +7,6 @@ class Shift < ApplicationRecord
   validate :ensure_valid_start_time
   validate :ensure_valid_finish_time
   validate :ensure_valid_date
-
   validates_datetime :start
   validates_datetime :finish
   validates_date :start, on_or_before: :today
@@ -43,13 +42,13 @@ class Shift < ApplicationRecord
   end
 
   def ensure_valid_start_time
-    if !start_time.match(/^\d{1,2}:\d{1,2}:\d{1,2}/)
+    if !start_time.match(/^\d{1,2}:\d{1,2}(:\d{1,2})?/)
       errors.add(:start_time, "must be valid time")
     end
   end
 
   def ensure_valid_finish_time
-    if !finish_time.match(/^\d{1,2}:\d{1,2}:\d{1,2}/)
+    if !finish_time.match(/^\d{1,2}:\d{1,2}(:\d{1,2})?/)
       errors.add(:finish_time, "must be valid time")
     end
   end
