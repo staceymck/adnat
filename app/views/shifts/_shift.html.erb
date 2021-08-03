@@ -3,7 +3,7 @@
   <td>
     <%= display_date(shift) %>
     <% if shift.overnight %>
-      <%= fa_icon "moon-o", title: "Overnight", id: "moon", class: "icon-m" %>
+      <%= fa_icon "moon-o", title: "Overnight", id: "moon-icon", class: "icon-m" %>
     <% end %>
   </td>
   <td><%= display_time(shift.start) %></td>
@@ -18,7 +18,7 @@
   </td>
   <td>
     <%= button_to shift_path(shift), method: :delete, data: { confirm: "Confirm delete shift" }, class: "btn-link" do %>
-      <%= fa_icon "trash", title: "Delete", id: "trash", class: "icon-m" %>
+      <%= fa_icon "trash", title: "Delete", id: "trash-icon", class: "icon-m" %>
     <% end %>
   </td>
 </tr>
