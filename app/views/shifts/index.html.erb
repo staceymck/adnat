@@ -1,0 +1,30 @@
+<div class="cw-container">
+  <h1 class="page-title"><%= @organisation.name %></h1>
+  <h2 class="sub-title">Shifts</h2>
+
+  <div class="flex-two-split">
+    <p>Search FEATURE</p>
+    <%= link_to "Add your shift", new_shift_path, class: "btn-primary" %>
+  </div>
+  <div class="scroll">
+    <table class="full-width">
+      <thead>
+        <tr>
+          <th class="emphasis">Employee Name</th>
+          <th class="emphasis">Shift Date</th>
+          <th class="emphasis">Start Time</th>
+          <th class="emphasis">Finish Time</th>
+          <th class="emphasis">Break length<br><span>(total mins)<span></th>
+          <th class="emphasis">Hours worked</th>
+          <th class="emphasis">Shift cost</th>
+          <th class="emphasis">Edit</th>
+          <th class="emphasis">Delete</th>
+        <tr>
+      </thead>
+      <tbody>
+        <%= render partial: 'shift', collection: @shifts, locals: {shift: @shift, organisation: @organisation} %>
+        <%= no_table_records_msg(@shifts) %>
+      </tbody>
+    </table>
+  </div>
+</div>
