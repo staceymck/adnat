@@ -6,11 +6,10 @@ class ShiftsController < ApplicationController
   # Index only used for nested route - organisation/:id/shifts
   def index
     org_id = params[:organisation_id]
-    @shifts = Shift.includes(:user).where(users: {organisation_id: org_id})
+    @shifts = Shift.includes(:user).where(users: {organisation_id: org_id}).newest
     if params[:q]
       @shifts = @shifts.filter_by_user_name(params[:q])
     end
-    @shifts.newest
   end
 
   # Only allow users who have an org to add a shift
