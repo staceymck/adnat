@@ -5,17 +5,17 @@
   height: 100%;
   background-image: linear-gradient(180deg, #5ED6EB 0%, rgba(34, 140, 197, 0.8) 50.52%, #228CC5 100%);
   
-  p, a {
+  p {
     color: #fff;
     text-align: center;
   }
-}
 
-.auth-helper {
-  color: $body-color;
-  text-align: left;
-  font-size: .8rem;
-  padding-bottom: .25rem;
+  .auth-helper {
+    color: $body-color;
+    text-align: left;
+    font-size: .8rem;
+    padding-bottom: .25rem;
+  }
 }
 
 .auth-site-name {
@@ -32,11 +32,5 @@
   h1 {
     text-align: center;
     margin-bottom: 1rem;
-  }
-
-  /* Forgot password link */
-  p {
-    color: $body-color;
-    text-align: left;
   }
 }
