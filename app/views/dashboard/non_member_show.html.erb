@@ -1,11 +1,13 @@
+<%= render partial: '/shared/flash_alerts' %>
 <h1 class="page-title">Join an organisation</h1>
-<p>You aren’t a member of any organisation. Join an existing one or create a new one to join.</p>
+<p class="flex-center">You aren’t a member of any organisation. Join an existing one or create a new one to join.</p>
 
-<div class="flex-two-panel">
+<div class="flex-two-center dash-member">
   <div class="flex-left">
     <h2>Organisations</h2>
-    <div class="scroll">
+    <div class="scroll-sm">
       <%= render partial: '/dashboard/organisation', collection: @organisations, locals: {user: @user} %>
+      <%= no_records_msg(@organisations) %>
     </div>
   </div>
   <div class="flex-right">
