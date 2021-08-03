@@ -1,0 +1,11 @@
+@import "variables";
+
+.error-explanation {
+  margin: 1rem;
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: $alert-color;
+  }
+}
