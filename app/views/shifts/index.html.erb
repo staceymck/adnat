@@ -3,8 +3,17 @@
   <h2 class="sub-title">Shifts</h2>
 
   <div class="flex-two-split">
-    <p>Search FEATURE</p>
-    <%= link_to "Add your shift", new_shift_path, class: "btn-primary" %>
+    <div>
+    <%= form_with url: organisation_shifts_path(@organisation), method: :get, local: true, class: "search-bar" do |f| %>
+      <%= f.label :q, "Filter by employee name" %>
+      <%= f.text_field :q, id: :q %> 
+      <%= f.submit "Apply" %>
+    <% end %>
+    <%= link_to "View all", organisation_shifts_path(@organisation) %>
+    </div>
+    <div>
+      <%= link_to "Add your shift", new_shift_path, class: "btn-primary" %>
+    </div>
   </div>
   <div class="scroll">
     <table class="full-width">
@@ -28,6 +37,6 @@
     </table>
   </div>
   <div class="table-helper">
-    <%= fa_icon "moon-o", title: "Overnight", id: "moon", class: "icon-m" %> Indicates overnight shift</p>
+    <%= fa_icon "moon-o", title: "Overnight", id: "moon-icon", class: "icon-m" %> Indicates overnight shift</p>
   </div>
 </div>

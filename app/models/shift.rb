@@ -9,6 +9,10 @@ class Shift < ApplicationRecord
   validates_date :start, on_or_before: :today
 
   scope :newest, -> {order(start: :desc)}
+  
+  def self.filter_by_user_name(q)
+    includes(:user).where("name LIKE ?", "%#{q}%")
+  end
 
   def overnight
    self[:start].day < self[:finish].day

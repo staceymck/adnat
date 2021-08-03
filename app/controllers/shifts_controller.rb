@@ -6,9 +6,11 @@ class ShiftsController < ApplicationController
   # Index only used for nested route - organisation/:id/shifts
   def index
     org_id = params[:organisation_id]
-    # Find more efficient way to run this query
-    # @shifts = Shift.joins(:user).where(users: {organisation_id: org_id})
-    @shifts = Shift.includes(:user).where(users: {organisation_id: org_id}).newest
+    @shifts = Shift.includes(:user).where(users: {organisation_id: org_id})
+    if params[:q]
+      @shifts = @shifts.filter_by_user_name(params[:q])
+    end
+    @shifts.newest
   end
 
   # Only allow users who have an org to add a shift
@@ -24,7 +26,6 @@ class ShiftsController < ApplicationController
   def create
     if @user.organisation
       @shift = @user.shifts.build(shift_params)
-      # clean up data
       if @shift.save
         redirect_to organisation_shifts_path(@user.organisation)
       else
@@ -38,7 +39,7 @@ class ShiftsController < ApplicationController
   def edit
   end
 
-  #only allow users to edit shifts at their org
+  # Only allow users to edit shifts at their org
   def update
     if @shift.update(shift_params)
       redirect_to organisation_shifts_path(@organisation)
@@ -66,7 +67,7 @@ class ShiftsController < ApplicationController
   end
 
   def redirect_if_not_authorized
-    # Make sure current user is also a member of the organisation where shift took place
+    # Make sure current user is a member of the organisation where shift took place
     if !@organisation || current_user.organisation_id != @organisation.id
       flash[:alert] = "Invalid path"
       redirect_to dashboard_path
@@ -78,7 +79,6 @@ class ShiftsController < ApplicationController
     if params[:organisation_id]
       @organisation = Organisation.find_by_id(params[:organisation_id])
     else
-    # Otherwise the organisation is set as the shift's user's org
       @organisation = @shift.user.organisation
     end
   end
