@@ -3,14 +3,14 @@
 table  {
   width: 100%;
   border-collapse: collapse; 
+
+  #moon {
+    padding-left: .25rem;
+  }
 }
 
-// thead {
-//   background-color: gray;
-// }
-
 tr {
-  border-bottom: thin solid $gray;
+  border-bottom: thin solid $gray; 
 }
 
 thead tr {
@@ -32,11 +32,15 @@ th {
 }
 
 td {
-  padding: 1rem;
+  padding: .75rem .25rem;
 }
 
 .scroll thead th {
   position: sticky;
   top: 0;
   background: #fff;
+}
+
+.table-helper {
+  padding: 1.5rem 0;
 }

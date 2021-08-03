@@ -1,11 +1,24 @@
 <tr class="table-row">
   <td><%= shift.user.name %></td>
-  <td><%= display_date(shift) %></td>
+  <td>
+    <%= display_date(shift) %>
+    <% if shift.overnight %>
+      <%= fa_icon "moon-o", title: "Overnight", id: "moon", class: "icon-m" %>
+    <% end %>
+  </td>
   <td><%= display_time(shift.start) %></td>
   <td><%= display_time(shift.finish) %></td>
   <td><%= shift.break_length %></td>
-  <td><%= hours_worked(shift) %></td>
+  <td><%= number_with_precision(hours_worked(shift), precision: 2) %></td>
   <td><%= shift_cost(shift, organisation) %></td>
-  <td><%= link_to "EDIT", edit_shift_path(shift) %></td>
-  <td><%= button_to "X DELETE", shift_path(shift), method: :delete, data: { confirm: "Confirm delete shift" } %></td>
+  <td>
+    <%= link_to edit_shift_path(shift) do %>
+      <%= fa_icon "edit", title: "Edit", class: "icon-m" %>
+    <% end %>
+  </td>
+  <td>
+    <%= button_to shift_path(shift), method: :delete, data: { confirm: "Confirm delete shift" }, class: "btn-link" do %>
+      <%= fa_icon "trash", title: "Delete", id: "trash", class: "icon-m" %>
+    <% end %>
+  </td>
 </tr>
