@@ -10,11 +10,6 @@ class UserTest < ActiveSupport::TestCase
     assert @user.valid?, "user is not valid"
   end
 
-  test "password should be present" do
-    @user.password = " "
-    assert_not @user.valid?, "password is empty string"
-  end
-
   test "password must be at least 6 characters long" do
     @user.password = "12345"
     assert_not @user.valid?, "password is not at least 6 characters"
