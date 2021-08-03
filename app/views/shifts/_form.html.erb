@@ -1,0 +1,13 @@
+<%= render partial: '/shared/validation_errors', locals: {object: shift} %>
+
+<%= form_with model: shift, local: true do |f| %>
+  <%= f.label :date %><br>
+  <%= f.date_field :date, value: form_date(shift) %><br>
+  <%= f.label :start_time %><br>
+  <%= f.time_field :start_time, value: form_start_time(shift) %><br>
+  <%= f.label :finish_time %><br>
+  <%= f.time_field :finish_time, value: form_finish_time(shift) %><br>
+  <%= f.label :break_length %> (minutes)<br>
+  <%= f.number_field :break_length %><br>
+  <%= f.submit "Save", class: "btn-primary" %>
+<% end %>
