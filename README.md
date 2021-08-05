@@ -35,5 +35,5 @@ $ git clone https://github.com/staceymck/adnat.git
 You are now ready to launch the app locally. In your terminal, first run `yarn add @rails/webpacker`. Then run `rails s` then navigate to localhost:3000 in your browser.
 
 You can use the following seed data account to sign in or create a new user account:
-Email: joi@company.com
-Password: 123456
+* Email: joi@company.com
+* Password: 123456
