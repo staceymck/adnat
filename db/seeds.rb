@@ -26,27 +26,41 @@ Organisation.all.each do |org|
   end
 end
 
-# Create shifts for each employee, except first user with no org membership yet
+# Create shifts using virtual attribute formats expected from frontend forms:
+  # start_time: "hh:mm"
+  # date: "yyyy-mm-dd"
+  # finish_time: "hh:mm"
+
 User.all.each do |user|
-  # Generate standard shifts
   if (user.id != 1)
+    # Generate standard shifts
     3.times do
-      start_hr = rand(0..12)
+      start_hr = rand(0..9)
+      start_min = [5, 15, 30].sample
       finish_hr = start_hr + rand(6..10)
+      finish_min = [15, 30, 45].sample
       day = rand(1..20)
+      month = rand(1..7)
+      year = 2021
   
       user.shifts.create!(
-        start: DateTime.new(2021,7,day,start_hr),
-        finish: DateTime.new(2021,7,day,finish_hr),
+        date: "#{year}-#{month}-#{day}",
+        start_time: "0#{start_hr}:#{start_min}",
+        finish_time: "#{finish_hr}:#{finish_min}",
         break_length: [15, 30, 45, 60].sample
       )
     end
-  end
 
-  # Generate overnight shift
-  user.shifts.create!(
-    start: DateTime.new(2021,7,21,18,30),
-    finish: DateTime.new(2021,7,22,3),
-    break_length: 45
-  )
+    # Generate overnight shift
+    day = rand(1..20)
+    month = rand(1..7)
+    year = 2021
+
+    user.shifts.create!(
+      date: "#{year}-#{month}-#{day}",
+      start_time: "18:00",
+      finish_time: "02:00",
+      break_length: 45
+    )
+  end
 end
