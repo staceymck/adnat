@@ -3,11 +3,16 @@
 one:
   name: Sali Mander
   email: user@company.com
-  organisation: AquaCo
+  organisation: aquaco
   password_digest: <%= BCrypt::Password.create("password") %>
 
 two:
   name: Carli Keryl
   email: carlik@solarroofs.org
-  organisation: Solar Roofs Inc.
+  organisation: center
+  password_digest: <%= BCrypt::Password.create("password") %>
+
+three:
+  name: Matz Mali
+  email: matz@company.com
   password_digest: <%= BCrypt::Password.create("password") %>

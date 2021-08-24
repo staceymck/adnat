@@ -2,7 +2,7 @@ require 'test_helper'
 
 class OrganisationTest < ActiveSupport::TestCase
   def setup
-    @org = organisations(:one)
+    @org = organisations(:aquaco)
   end
 
   test "organisation should be valid" do
